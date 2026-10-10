@@ -33,4 +33,39 @@ public class CircularQueue {
         elements[rear] = value;
         count++;
     }
+
+    /** Removes and returns the front element. Throws if the queue is empty. */
+    public int dequeue() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Queue Underflow: cannot dequeue from an empty queue.");
+        }
+        int value = elements[front];
+        front = (front + 1) % elements.length;
+        count--;
+        return value;
+    }
+
+    /** Returns the front element without removing it. */
+    public int peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Queue is empty: nothing at the front.");
+        }
+        return elements[front];
+    }
+
+    /** Prints the queue from front to rear. */
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("  Queue is empty.");
+            return;
+        }
+        StringBuilder sb = new StringBuilder("  FRONT -> ");
+        for (int i = 0; i < count; i++) {
+            sb.append(elements[(front + i) % elements.length]);
+            if (i < count - 1) sb.append(" | ");
+        }
+        sb.append(" <- REAR");
+        System.out.println(sb);
+        System.out.println("  (size = " + count + ", capacity = " + elements.length + ")");
+    }
 }
