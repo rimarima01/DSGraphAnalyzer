@@ -45,4 +45,17 @@ public class ArrayStack {
         }
         return elements[top];
     }
+
+    /** Prints the stack from top to bottom. */
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("  Stack is empty.");
+            return;
+        }
+        System.out.println("  TOP");
+        for (int i = top; i >= 0; i--) {
+            System.out.println("  | " + elements[i] + " |" + (i == top ? "  <- top" : ""));
+        }
+        System.out.println("  BOTTOM   (size = " + size() + ", capacity = " + elements.length + ")");
+    }
 }
