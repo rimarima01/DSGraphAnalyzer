@@ -42,4 +42,41 @@ public class DynamicArray {
         lastSteps = 1;
         return resized;
     }
+
+
+    /** Inserts at index (0..size). Elements are shifted right - O(n). */
+    public boolean insertAt(int index, int value) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index must be between 0 and " + size + ".");
+        }
+        boolean resized = ensureCapacity();
+        long shifts = 0;
+        for (int i = size; i > index; i--) {
+            data[i] = data[i - 1];
+            shifts++;
+        }
+        data[index] = value;
+        size++;
+        lastSteps = shifts + 1;
+        return resized;
+    }
+
+    /** Deletes the element at index and shifts the rest left - O(n). Returns the removed value. */
+    public int deleteAt(int index) {
+        if (isEmpty()) {
+            throw new IllegalStateException("Array is empty. Nothing to delete.");
+        }
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index must be between 0 and " + (size - 1) + ".");
+        }
+        int removed = data[index];
+        long shifts = 0;
+        for (int i = index; i < size - 1; i++) {
+            data[i] = data[i + 1];
+            shifts++;
+        }
+        size--;
+        lastSteps = shifts + 1;
+        return removed;
+    }
 }
