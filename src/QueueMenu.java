@@ -34,6 +34,12 @@ public class QueueMenu {
                         System.out.println("  Dequeued " + value + ".");
                         ResultLog.add("Queue", "Dequeue -> " + value);
                     }
+                    case 3 -> {
+                        int value = queue.peek();
+                        System.out.println("  Front element is " + value + ".");
+                        ResultLog.add("Queue", "Peek -> " + value);
+                    }
+                    case 4 -> queue.display();
                     case 5 -> { return; }
                 }
             } catch (IllegalStateException e) {
