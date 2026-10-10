@@ -42,11 +42,40 @@ public class StackMenu {
                         ResultLog.add("Stack", "Peek -> " + value);
                     }
                     case 4 -> stack.display();
+                    case 5 -> checkBrackets();
                     case 6 -> { return; }
                 }
             } catch (IllegalStateException e) {
                 System.out.println("  [!] " + e.getMessage());
             }
         }
+    }
+
+    /** Uses a stack to check if (), [] and {} are balanced in an expression. */
+    private void checkBrackets() {
+        String expression = InputHelper.readLine("Enter an expression, e.g. {[(a+b)*c]}: ");
+        ArrayStack bracketStack = new ArrayStack(Math.max(1, expression.length()));
+        boolean balanced = true;
+
+        for (char c : expression.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                bracketStack.push(c);
+            } else if (c == ')' || c == ']' || c == '}') {
+                if (bracketStack.isEmpty()) {
+                    balanced = false;
+                    break;
+                }
+                char open = (char) bracketStack.pop();
+                if ((c == ')' && open != '(') || (c == ']' && open != '[') || (c == '}' && open != '{')) {
+                    balanced = false;
+                    break;
+                }
+            }
+        }
+        if (!bracketStack.isEmpty()) {
+            balanced = false;
+        }
+        System.out.println("  Expression is " + (balanced ? "BALANCED." : "NOT balanced."));
+        ResultLog.add("Stack", "Bracket check \"" + expression + "\" -> " + (balanced ? "balanced" : "not balanced"));
     }
 }
