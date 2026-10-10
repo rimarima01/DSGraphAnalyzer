@@ -79,4 +79,75 @@ public class DynamicArray {
         lastSteps = shifts + 1;
         return removed;
     }
+
+
+    /** Linear search - returns index or -1. Counts comparisons in lastSteps. */
+    public int linearSearch(int target) {
+        long comparisons = 0;
+        for (int i = 0; i < size; i++) {
+            comparisons++;
+            if (data[i] == target) {
+                lastSteps = comparisons;
+                return i;
+            }
+        }
+        lastSteps = comparisons;
+        return -1;
+    }
+
+    /** Deletes the first occurrence of value. Returns the index it was at, or -1. */
+    public int deleteByValue(int value) {
+        int index = linearSearch(value);
+        if (index != -1) {
+            long searchSteps = lastSteps;
+            deleteAt(index);
+            lastSteps += searchSteps;
+        }
+        return index;
+    }
+
+    public int get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range.");
+        }
+        return data[index];
+    }
+
+    /** Returns a copy containing only the used elements. */
+    public int[] toArray() {
+        return Arrays.copyOf(data, size);
+    }
+
+    public boolean isSorted() {
+        for (int i = 1; i < size; i++) {
+            if (data[i - 1] > data[i]) return false;
+        }
+        return true;
+    }
+
+    /** Sorts the used part of the array in ascending order. */
+    public void sort() {
+        Arrays.sort(data, 0, size);
+    }
+
+    public void clear() {
+        size = 0;
+    }
+
+    /** Prints the array with its indexes. */
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("  Array is empty.");
+            return;
+        }
+        StringBuilder values = new StringBuilder("  Value : ");
+        StringBuilder indexes = new StringBuilder("  Index : ");
+        for (int i = 0; i < size; i++) {
+            values.append(String.format("%-6d", data[i]));
+            indexes.append(String.format("%-6d", i));
+        }
+        System.out.println(values);
+        System.out.println(indexes);
+        System.out.println("  (size = " + size + ", capacity = " + data.length + ")");
+    }
 }
