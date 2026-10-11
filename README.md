@@ -180,7 +180,7 @@ Object-oriented principles used: **encapsulation** (private fields, public metho
 ### Step-by-step (Command Prompt / Terminal)
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/DSGraphAnalyzer.git
+git clone https://github.com/rimarima01/DSGraphAnalyzer.git
 cd DSGraphAnalyzer
 
 # 2. Compile all source files into the "out" folder
