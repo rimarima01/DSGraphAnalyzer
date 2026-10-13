@@ -39,7 +39,9 @@ with clear messages instead of crashes.
 
 ### Student Name: MSF.Rimasa (Group Leader)
 **Student ID:** 23DA2-0507
+
 **Assigned Responsibility:** Array component, Searching component, Main menu & system integration, GitHub repository owner
+
 **Individual Contribution:**
 - Created the GitHub repository, `.gitignore` and project structure
 - Implemented `DynamicArray` (insert at end / at position, delete by position / value, linear search, sort, display, auto-resize)
@@ -51,7 +53,9 @@ with clear messages instead of crashes.
 
 ### Student Name: ANT.Ahamed
 **Student ID:** 23DA2-0514
+
 **Assigned Responsibility:** Stack component, Queue component, Testing
+
 **Individual Contribution:**
 - Implemented `ArrayStack` (push, pop, peek, display, overflow / underflow handling)
 - Implemented `StackMenu` including the **balanced-bracket checker** (stack application)
@@ -62,7 +66,9 @@ with clear messages instead of crashes.
 
 ### Student Name: MUM.Amhar
 **Student ID:** 23DA2-0673
+
 **Assigned Responsibility:** Linked List component, Performance comparison
+
 **Individual Contribution:**
 - Implemented `SinglyLinkedList` (insert at head / tail / position, delete by value, delete head, search, reverse, display)
 - Implemented `LinkedListMenu` with validation and empty-list handling
@@ -72,7 +78,9 @@ with clear messages instead of crashes.
 
 ### Student Name: MIFZ.Azzah
 **Student ID:** 23DA2-1072
+
 **Assigned Responsibility:** Graph component, Documentation, Video merge
+
 **Individual Contribution:**
 - Implemented the `Graph` class using an **adjacency list**
 - Implemented add vertex, add edge, remove edge, display adjacency list, display adjacency matrix
