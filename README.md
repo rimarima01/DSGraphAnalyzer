@@ -27,10 +27,10 @@ with clear messages instead of crashes.
 
 | No. | Name | Student ID | Role |
 |-----|------|-----------|------|
-| 1 | MSF.Rimasa | 23DA2-0507 | Group Leader |
-| 2 | ANT.Ahamed | 23DA2-0514 | Member 2 |
-| 3 | MUM.Amhar | 23DA2-0673 | Member 3 |
-| 4 | MIFZ.Azzah | 23DA2-1072 | Member 4 |
+| 1 | Mohammed Siddeek Fathima Rimasa | 23DA2-0507 | Group Leader |
+| 2 | Abdul Nazeer Thaiseer Ahamed | 23DA2-0514 | Member 2 |
+| 3 | Mohammed Uwais Mohammed Amhar | 23DA2-0673 | Member 3 |
+| 4 | Mohamed Iqbal Fathima Zeenath Azzah | 23DA2-1072 | Member 4 |
 
 
 ---
