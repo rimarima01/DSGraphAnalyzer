@@ -32,8 +32,6 @@ with clear messages instead of crashes.
 | 3 | MUM.Amhar | 23DA2-0673 | Member 3 |
 | 4 | MIFZ.Azzah | 23DA2-1072 | Member 4 |
 
-> ⚠️ **Before submitting:** replace each name above with the member's **full name exactly as registered**
-> (the assignment requires the *full name* of every member).
 
 ---
 
@@ -60,7 +58,7 @@ with clear messages instead of crashes.
 - Implemented `CircularQueue` (enqueue, dequeue, peek/front, display, circular wrap-around, overflow / underflow handling)
 - Implemented `QueueMenu`
 - Wrote the test-case document `TESTING.md` and tested invalid inputs and empty-structure cases
-- Integrated the Stack and Queue menus with the main application
+- Tested the Stack and Queue menus inside the integrated main application
 
 ### Student Name: MUM.Amhar
 **Student ID:** 23DA2-0673
@@ -70,7 +68,7 @@ with clear messages instead of crashes.
 - Implemented `LinkedListMenu` with validation and empty-list handling
 - Implemented `PerformanceAnalyzer` (Linear vs Binary search, search growth table, BFS vs DFS, Array vs Linked List insertion, full report)
 - Wrote the complexity explanations ("WHY?") shown under every comparison table
-- Integrated the Linked List and Performance modules with the main application
+- Tested the Linked List and Performance modules inside the integrated main application
 
 ### Student Name: MIFZ.Azzah
 **Student ID:** 23DA2-1072
@@ -81,7 +79,7 @@ with clear messages instead of crashes.
 - Implemented **BFS** traversal (queue) and **DFS** traversal (stack) with step counting
 - Implemented vertex search (BFS / DFS), shortest-path search, sample-graph loader and random-graph generator
 - Implemented `GraphMenu` with validation
-- Tested graph functionality and integrated the Graph module with the main application
+- Tested the graph functionality, including inside the integrated main application
 - Prepared the README and merged the final demonstration video
 
 ---
@@ -143,7 +141,7 @@ with clear messages instead of crashes.
 ```
 DSGraphAnalyzer/
 ├── README.md
-├── TESTING.md
+├── TESTING.md                     # 32 test cases
 ├── .gitignore
 └── src/
     ├── Main.java                  # main menu + integration
@@ -178,15 +176,29 @@ Object-oriented principles used: **encapsulation** (private fields, public metho
 * Java JDK 17 or newer – check with `java -version` and `javac -version`.
 
 ### Step-by-step (Command Prompt / Terminal)
-```bash
-# 1. Clone the repository
+
+**1. Clone the repository and open the project folder**
+
+```
 git clone https://github.com/rimarima01/DSGraphAnalyzer.git
 cd DSGraphAnalyzer
+```
 
-# 2. Compile all source files into the "out" folder
+**2. Compile all source files into the `out` folder**
+
+Windows (Command Prompt):
+```
+javac -d out src\*.java
+```
+Mac / Linux:
+```
 javac -d out src/*.java
+```
+No output means the compilation succeeded.
 
-# 3. Run the program
+**3. Run the program**
+
+```
 java -cp out Main
 ```
 
@@ -228,9 +240,34 @@ the same number of steps; they only differ when searching for one particular ver
 
 ## 9. Collaboration (GitHub)
 
-* One `main` branch (stable) and one feature branch per member (`feature/array-search`, `feature/stack-queue`,
-  `feature/linkedlist`, `feature/graph`, …).
-* Every change is merged into `main` through a **Pull Request** that is reviewed by another member.
-* Tasks are tracked with GitHub **Issues**.
+Repository: https://github.com/rimarima01/DSGraphAnalyzer
 
-Commit history, branches and pull requests are available in the repository as collaboration evidence.
+The project was developed using GitHub with one stable `main` branch and separate
+feature branches for each responsibility:
+
+- `feature/array` - Array component
+- `feature/searching` - Searching component
+- `feature/stack` - Stack component
+- `feature/queue` - Queue component
+- `feature/linkedlist` - Linked List component
+- `feature/graph` - Graph component
+- `feature/performance` - Performance comparison
+- `feature/main-integration` - Main menu integration
+- `feature/testing` - Testing document
+
+Every change was reviewed and merged into `main` through Pull Requests:
+
+| Pull Request | Branch | Work |
+|---|---|---|
+| #1, #2 | `feature/linkedlist` | Linked List |
+| #3 | `feature/performance` | Performance comparison |
+| #4, #5 | `feature/array` | Array component |
+| #6 | `feature/searching` | Searching component |
+| #7 | `feature/stack` | Stack component |
+| #8 | `feature/queue` | Queue component |
+| #9 | `feature/graph` | Graph component |
+| #10 | `feature/main-integration` | Main menu integration |
+| #11 | `feature/testing` | Testing document (`TESTING.md`) |
+
+Tasks were tracked using GitHub Issues, and the repository history contains the
+commits, reviews, approvals and merge records.
